@@ -15,12 +15,12 @@ public class registerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.createprofile);
 
-        nameEditText = findViewById(R.id.editTextName);
-        emailEditText = findViewById(R.id.editTextEmail);
-        passwordEditText = findViewById(R.id.editTextPassword);
-        submitButton = findViewById(R.id.buttonSubmit);
+        //nameEditText = findViewById(R.id.editTextName);
+        //emailEditText = findViewById(R.id.editTextEmail);
+        //passwordEditText = findViewById(R.id.editTextPassword);
+        //submitButton = findViewById(R.id.buttonSubmit);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
