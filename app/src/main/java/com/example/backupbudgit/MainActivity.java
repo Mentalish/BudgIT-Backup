@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText usernameEditText;
@@ -43,18 +44,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String username = usernameEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
 
-        // Here you can add your logic for validating login credentials
-        if(username.equals("admin") && password.equals("admin123")) {
-            // Login success
-            Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-            // Intent to navigate to another activity
-        } else {
-            // Login failed
-            Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
-        }
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
+
+
+//        String username = usernameEditText.getText().toString();
+//        String password = passwordEditText.getText().toString();
+//
+//        // Here you can add your logic for validating login credentials
+//        if(username.equals("admin") && password.equals("admin123")) {
+//            // Login success
+//            Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+//            // Intent to navigate to another activity
+//        } else {
+//            // Login failed
+//            Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+//        }
     }
 
     private void openRegisterLayout() {
