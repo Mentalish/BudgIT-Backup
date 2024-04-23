@@ -1,5 +1,6 @@
 package com.example.backupbudgit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,15 +14,15 @@ public class MainActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        usernameEditText = findViewById(R.id.loginpageUsername);
-        passwordEditText = findViewById(R.id.loginpagePassword);
         loginButton = findViewById(R.id.loginButton);
+        registerButton = findViewById(R.id.registerButton);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 loginUser();
             }
         });
+
+        Button buttonOpenNewLayout = registerButton;
+        buttonOpenNewLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRegisterLayout();
+            }
+        });
     }
+
+
 
     private void loginUser() {
         String username = usernameEditText.getText().toString();
@@ -45,4 +56,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
         }
     }
+
+    private void openRegisterLayout() {
+        Intent intent = new Intent(this, registerActivity.class);
+        startActivity(intent);
+    }
+
+
+
 }
