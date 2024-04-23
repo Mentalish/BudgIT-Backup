@@ -21,8 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loginButton = findViewById(R.id.loginButton);
-        registerButton = findViewById(R.id.registerButton);
+        usernameEditText = findViewById(R.id.loginpageUsername);
+        passwordEditText = findViewById(R.id.loginpagePassword);
+
+        loginButton = (Button) findViewById(R.id.loginButton);
+        registerButton = (Button) findViewById(R.id.registerButton);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,16 +34,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonOpenNewLayout = registerButton;
-        buttonOpenNewLayout.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRegisterLayout();
             }
         });
     }
-
-
 
     private void loginUser() {
         String username = usernameEditText.getText().toString();
@@ -58,10 +58,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openRegisterLayout() {
+
         Intent intent = new Intent(this, registerActivity.class);
         startActivity(intent);
     }
-
-
 
 }
