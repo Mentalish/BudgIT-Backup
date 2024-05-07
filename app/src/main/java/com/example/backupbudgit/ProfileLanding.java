@@ -14,13 +14,13 @@ public class ProfileLanding extends ComponentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_main);
-        setupDataButton();
+        //setupDataButton();
         setupVisualizeButton();
-        setupCalculatorButton();
+        //setupCalculatorButton();
         setupLogoutButton();
     }
 
-    private void setupDataButton(){
+/*    private void setupDataButton(){
         dataButton = findViewById(R.id.data_button);
         dataButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
@@ -30,7 +30,7 @@ public class ProfileLanding extends ComponentActivity {
             }
         });
     }
-
+*/
     private void setupVisualizeButton() {
         visualizeButton = findViewById(R.id.chart_view_button);
         visualizeButton.setOnClickListener(new View.OnClickListener(){
@@ -41,6 +41,7 @@ public class ProfileLanding extends ComponentActivity {
         });
     }
 
+    /*
     private void setupCalculatorButton(){
         calculatorButton = findViewById(R.id.calc_view_button);
         calculatorButton.setOnClickListener(new View.OnClickListener(){
@@ -51,7 +52,7 @@ public class ProfileLanding extends ComponentActivity {
             }
         });
     }
-
+*/
     private void setupLogoutButton(){
         logoutButton = findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener(){
