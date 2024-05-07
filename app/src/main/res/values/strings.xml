@@ -11,4 +11,15 @@
     <string name="plainText_confirmPassword">Confirm Password</string>
 
     <string name="plainText_Registration">Registration</string>
+    <string name="dataEntry">Enter Budget Information</string>
+    <string name="chartView">Visual Representation of Budget</string>
+    <string name="viewCalc">Loan/Savings Calculator</string>
+    <string name="logout">Logout</string>
+    <string name="income_text">Please enter your monthly income:</string>
+    <string name="moreButton">More?</string>
+    <string name="doneFinance">Finished</string>
+    <string name="bills_text">Please enter your recurring monthly bills:</string>
+    <string name="backToProfile">Profile Home</string>
+    <string name="toChartPage">Visualize</string>
+    <string name="toCalculator">Calculators</string>
 </resources>

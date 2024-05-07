@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/incomeText"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/income_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/incomeEntry"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/incomeText"
+        app:layout_constraintTop_toBottomOf="@+id/incomeText" />
+
+    <Button
+        android:id="@+id/more_income_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/moreButton"
+        app:layout_constraintStart_toStartOf="@+id/incomeEntry"
+        app:layout_constraintTop_toBottomOf="@+id/incomeEntry" />
+
+    <Button
+        android:id="@+id/done_income_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/doneFinance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/more_income_button"
+        app:layout_constraintTop_toBottomOf="@+id/incomeEntry" />
+
+    <TextView
+        android:id="@+id/billsText"
+        android:layout_width="160dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="85dp"
+        android:text="@string/bills_text"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/incomeEntry"
+        app:layout_constraintTop_toBottomOf="@+id/more_income_button" />
+
+    <EditText
+        android:id="@+id/billsEntry"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/billsText"
+        app:layout_constraintTop_toBottomOf="@+id/billsText" />
+
+    <Button
+        android:id="@+id/more_bills_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/moreButton"
+        app:layout_constraintStart_toStartOf="@+id/billsEntry"
+        app:layout_constraintTop_toBottomOf="@+id/billsEntry" />
+
+    <Button
+        android:id="@+id/done_bills_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/doneFinance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/more_bills_button"
+        app:layout_constraintTop_toBottomOf="@+id/billsEntry" />
+
+    <Button
+        android:id="@+id/back_to_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/backToProfile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/to_chart_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="@string/toChartPage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/to_calculator"
+        app:layout_constraintStart_toEndOf="@+id/back_to_profile" />
+
+    <Button
+        android:id="@+id/to_calculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/toCalculator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
