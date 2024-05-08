@@ -5,6 +5,7 @@
     android:id="@+id/chart_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFDED"
     android:foregroundTintMode="add"
     tools:context=".MainActivity">
 
@@ -93,13 +94,13 @@
         android:layout_width="158dp"
         android:layout_height="138dp"
         android:layout_marginBottom="350dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/duckaccticon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        android:src="@drawable/duckaccticon"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.498" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

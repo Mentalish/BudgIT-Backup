@@ -25,4 +25,6 @@
     <string name="Register_button_text">Register</string>
     <string name="title">BudgIT</string>
     <string name="todo">TODO</string>
+    <string name="incomeinput">Income Here</string>
+    <string name="bill_amount_input">Bill cost here</string>
 </resources>
