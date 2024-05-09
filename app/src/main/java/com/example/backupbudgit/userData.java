@@ -1,7 +1,7 @@
 package com.example.backupbudgit;
 
 import com.example.backupbudgit.assets.*;
-import com.example.backupbudgit.expenses.*;
+import com.example.backupbudgit.expenses.Expense;
 import com.example.backupbudgit.liabilities.*;
 import com.example.backupbudgit.transactions.*;
 
