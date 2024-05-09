@@ -11,65 +11,73 @@ import java.io.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText usernameEditText;
-    private EditText passwordEditText;
-    private Button loginButton;
-    private Button registerButton;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupLoginButtons();
+        Toast.makeText(this, "Welcome to BudgIT!", Toast.LENGTH_SHORT).show();
+    }
 
-        usernameEditText = findViewById(R.id.loginpageUsername);
-        passwordEditText = findViewById(R.id.loginpagePassword);
-
-        loginButton = (Button) findViewById(R.id.loginButton);
-        registerButton = (Button) findViewById(R.id.registerButton);
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginUser();
+    private void setupLoginButtons(){
+        Button loginButton = findViewById(R.id.loginButton);
+        Button registerButton = findViewById(R.id.registerButton);
+        loginButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                EditText uText = findViewById(R.id.loginpageUsername);
+                EditText pText = findViewById(R.id.loginpagePassword);
+                int id = authenticate(uText.getText().toString(), pText.getText().toString());
+                if(id > 0){
+                    Intent intent = new Intent(MainActivity.this, ProfileLanding.class);
+                    intent.putExtra("id", id);
+                    startActivity(intent);
+                } else {
+                    uText.setText("");pText.setText("");
+                    uText.setError("Incorrect username and password combination.");
+                    pText.setError("Incorrect username and password combination.");
+                }
             }
         });
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRegisterLayout();
+        registerButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, registerActivity.class);
+                startActivity(intent);
             }
         });
     }
 
-    private void loginUser() {
-
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-
-
-
-//        String username = usernameEditText.getText().toString();
-//        String password = passwordEditText.getText().toString();
-//
-//        // Here you can add your logic for validating login credentials
-//        if(username.equals("admin") && password.equals("admin123")) {
-//            // Login success
-//            Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-//            // Intent to navigate to another activity
-//        } else {
-//            // Login failed
-//            Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
-//        }
-    }
-
-    private void openRegisterLayout() {
-
-        Intent intent = new Intent(this, registerActivity.class);
-        startActivity(intent);
+    private int authenticate(String username, String password) {
+        Scanner scan;
+        String str;
+        String[] loginInfo;
+        int id = -1;
+        File f = new File(getFilesDir().getAbsolutePath() + "/login.txt");
+        try {
+            if(f.exists()) {
+                scan = new Scanner(openFileInput("login.txt"));
+                while (scan.hasNext()) {
+                    str = scan.nextLine();
+                    loginInfo = str.split(",");
+                    if (username.equalsIgnoreCase(loginInfo[1]) && password.equalsIgnoreCase(loginInfo[2])) {
+                        id = Integer.parseInt(loginInfo[0]);
+                        break;
+                    }
+                }
+                scan.close();
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+        return id;
     }
 
     // Authentication Method, no syntatic errors
