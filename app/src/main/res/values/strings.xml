@@ -22,4 +22,9 @@
     <string name="backToProfile">Profile Home</string>
     <string name="toChartPage">Visualize</string>
     <string name="toCalculator">Calculators</string>
+    <string name="Register_button_text">Register</string>
+    <string name="title">BudgIT</string>
+    <string name="todo">TODO</string>
+    <string name="incomeinput">Income Here</string>
+    <string name="bill_amount_input">Bill cost here</string>
 </resources>
