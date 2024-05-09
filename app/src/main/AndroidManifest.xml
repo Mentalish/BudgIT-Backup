@@ -22,9 +22,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ProfileLanding"
             android:exported="false"
-            android:label="LoginActivity"
+            android:label="ProfileLanding"
             android:theme="@style/Theme.BackupBudgit">
 
         </activity>
