@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.util.*;
+import java.io.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -78,4 +80,38 @@ public class MainActivity extends AppCompatActivity {
         return id;
     }
 
+    // Authentication Method, no syntatic errors
+    private int authenticate(String username, String password){
+        Scanner scan;
+        String str="";
+        String[] userLoginInfo =  null;
+        boolean authenticated = false;
+        int id = -1;
+        File f = new File(getFilesDir().getAbsolutePath()+"/login.txt");
+
+        try{
+            if(f.exists()) {
+
+                scan = new Scanner(openFileInput("login.txt"));
+                while (scan.hasNext()) {
+                    str = scan.nextLine();
+                    userLoginInfo = str.split(",");
+                    if (username.equalsIgnoreCase(userLoginInfo[1]) && password.equalsIgnoreCase(userLoginInfo[2])) {
+                        authenticated = true;
+                        id = Integer.parseInt(userLoginInfo[0]);
+                        break;
+                    }
+                }
+                scan.close();
+            }
+        } catch(IOException e){
+            //TODO append to a .log file
+            //TODO DELETE system.out.line below
+            System.out.println("Error: " + e.getMessage());
+        }
+        return id;
+    }
+
 }
+
+

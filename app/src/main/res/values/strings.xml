@@ -29,4 +29,6 @@
     <string name="email_header">User\'s Email:</string>
     <string name="email_hint">Email address</string>
     <string name="name_hint">First and Last Name</string>
+
+
 </resources>
