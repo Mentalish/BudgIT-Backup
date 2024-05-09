@@ -22,13 +22,9 @@
     <string name="backToProfile">Profile Home</string>
     <string name="toChartPage">Visualize</string>
     <string name="toCalculator">Calculators</string>
-    <string name="register_nameInput">User\'s Name:</string>
-    <string name="passHint">Password</string>
-    <string name="confirmPassHint">Confirm Password</string>
-    <string name="submit_registration_button">Submit Registration</string>
-    <string name="email_header">User\'s Email:</string>
-    <string name="email_hint">Email address</string>
-    <string name="name_hint">First and Last Name</string>
-
-
+    <string name="Register_button_text">Register</string>
+    <string name="title">BudgIT</string>
+    <string name="todo">TODO</string>
+    <string name="incomeinput">Income Here</string>
+    <string name="bill_amount_input">Bill cost here</string>
 </resources>

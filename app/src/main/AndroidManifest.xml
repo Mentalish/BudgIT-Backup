@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.backupbudgit"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
@@ -15,30 +14,29 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:label="BackupBudgit"
-            android:theme="@style/Theme.BackupBudgit"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProfileLanding"
+            android:name=".LoginActivity"
             android:exported="false"
-            android:label="landing_activity"
-            android:theme="@style/Theme.BackupBudgit" />
+            android:label="LoginActivity"
+            android:theme="@style/Theme.BackupBudgit">
+
+        </activity>
         <activity
             android:name=".registerActivity"
             android:exported="false"
             android:label="RegisterActivity"
-            android:theme="@style/Theme.BackupBudgit" />
-        <!--
-        <activity
-            android:name=".ChartView"
-            android:exported="false"
-            android:label="ChartActivity"
-            android:theme="@style/Theme.BackupBudgit" />
-            -->
+            android:theme="@style/Theme.BackupBudgit">
+
+        </activity>
+
+
     </application>
+
 </manifest>
