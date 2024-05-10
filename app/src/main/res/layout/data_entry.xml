@@ -38,6 +38,7 @@
         android:layout_marginTop="25dp"
         android:text="@string/moreButton"
         app:cornerRadius="10dp"
+        app:icon="@android:drawable/ic_input_add"
         app:layout_constraintStart_toStartOf="@+id/incomeEntry"
         app:layout_constraintTop_toBottomOf="@+id/incomeEntry" />
 
@@ -80,6 +81,7 @@
         android:layout_marginTop="25dp"
         android:text="@string/moreButton"
         app:cornerRadius="10dp"
+        app:icon="@android:drawable/ic_input_add"
         app:layout_constraintStart_toStartOf="@+id/billsEntry"
         app:layout_constraintTop_toBottomOf="@+id/billsEntry" />
 
