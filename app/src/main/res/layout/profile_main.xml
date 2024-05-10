@@ -8,67 +8,93 @@
     android:background="#E4E4E4"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/data_button"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="@string/dataEntry"
+
+    <ImageView
+        android:id="@+id/stressed_duck"
+        android:layout_width="438dp"
+        android:layout_height="263dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/profilemainduck"
+        app:layout_constraintBottom_toTopOf="@+id/data_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
 
     <Button
         android:id="@+id/chart_view_button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="#6750A3"
         android:text="@string/chartView"
+        android:textColor="#FEFEFE"
+        app:cornerRadius="5dp"
         app:layout_constraintBottom_toTopOf="@+id/calc_view_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/data_button" />
+        app:layout_constraintTop_toBottomOf="@+id/data_button"
+        app:strokeColor="#C5AFFF"
+        app:strokeWidth="2dp" />
 
     <Button
         android:id="@+id/calc_view_button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="252dp"
+        android:background="#6750A3"
         android:text="@string/viewCalc"
+        android:textColor="#FEFEFE"
+        app:cornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeWidth="2dp"
+        app:strokeColor="#C5AFFF"
+         />
 
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#6750A3"
         android:text="@string/logout"
+        android:textColor="#FEFEFE"
+        app:cornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calc_view_button" />
+        app:layout_constraintTop_toBottomOf="@+id/calc_view_button"
+        app:strokeColor="#C5AFFF"
+        app:strokeWidth="2dp" />
 
-    <ImageView
-        android:id="@+id/stressed_duck"
-        android:layout_width="397dp"
-        android:layout_height="262dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/data_button"
+    <Button
+        android:id="@+id/data_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:background="#6750A3"
+        android:backgroundTintMode="src_atop"
+        android:text="@string/dataEntry"
+        android:textColor="#FEFEFE"
+        app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profilemainduck" />
+        app:strokeColor="#C5AFFF"
+        app:strokeWidth="4dp" />
+
 
     <Button
         android:id="@+id/paymentCalc_viewButton"
-        android:layout_width="305dp"
-        android:layout_height="46dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:text="@string/calc_payAssit"
+        app:cornerRadius="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc_view_button"
         app:layout_constraintVertical_bias="0.112" />
