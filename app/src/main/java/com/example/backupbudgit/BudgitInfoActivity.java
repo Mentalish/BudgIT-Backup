@@ -14,8 +14,23 @@ import java.util.*;
 import java.io.*;
 
 public class BudgitInfoActivity extends AppCompatActivity {
+    private Button profileHomeButton, visualizeButton, calculatorButton;
     public void onCreate(Bundle savedInsanceState){
         super.onCreate(savedInsanceState);
         setContentView((R.layout.data_entry));
+
+        setupProfileHome();
+    }
+
+    private void setupProfileHome(){
+
+        profileHomeButton = findViewById(R.id.back_to_profile);
+        profileHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BudgitInfoActivity.this, ProfileLanding.class);
+                startActivity(intent);
+            }
+        });
     }
 }
