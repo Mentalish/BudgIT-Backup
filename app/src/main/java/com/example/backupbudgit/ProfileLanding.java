@@ -9,6 +9,7 @@ import androidx.activity.ComponentActivity;
 
 public class ProfileLanding extends ComponentActivity {
     private Button dataButton, visualizeButton, calculatorButton, logoutButton;
+    private Button monthlyPaymentButton; //McLaughlin Button
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,10 @@ public class ProfileLanding extends ComponentActivity {
         setupVisualizeButton();
         //setupCalculatorButton();
         setupLogoutButton();
+
+        //McLaughlin Monthly Payment Button Setup START
+        setupMonthCalcButton();
+        //END Mc
     }
 
 /*    private void setupDataButton(){
@@ -57,6 +62,23 @@ public class ProfileLanding extends ComponentActivity {
         logoutButton = findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) { finish(); }
+
         });
     }
+
+    //McLaughlin Monthly Payment Button Setup START
+    private void setupMonthCalcButton(){
+        monthlyPaymentButton = findViewById(R.id.paymentCalc_viewButton);
+        monthlyPaymentButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) { openMothlyPaymentCalc(); }
+        });
+    }
+    //END Mc
+
+    //McLaughlin Monthly payment calculator open page START
+    private void openMothlyPaymentCalc(){
+        Intent intent = new Intent(ProfileLanding.this, MonthlyPaymentCalculator.class); // Replace ProfileActivity with your actual activity
+        startActivity(intent);
+    }
+    //END Mc
 }
