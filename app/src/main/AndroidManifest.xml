@@ -35,6 +35,13 @@
             android:theme="@style/Theme.BackupBudgit">
 
         </activity>
+        <activity
+            android:name=".MonthlyPaymentCalculator"
+            android:exported="false"
+            android:label="RegisterActivity"
+            android:theme="@style/Theme.BackupBudgit">
+
+        </activity>
 
 
     </application>
