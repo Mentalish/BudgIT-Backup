@@ -53,7 +53,7 @@ public class MonthlyPaymentCalculator extends AppCompatActivity {
     }
 
     public void calculateMonths(){
-        itWorked();
+        //itWorked();
         EditText totalBalanceInput = findViewById(R.id.payCalc_input_debtSize);
         EditText resultInput = findViewById(R.id.payCalc_input_results);
         EditText monthlyPaymentInput = findViewById(R.id.payCalc_input_monthlyPayments);
@@ -70,7 +70,7 @@ public class MonthlyPaymentCalculator extends AppCompatActivity {
     }
 
     public void calculateMonthlyPayments(){
-        itWorked();
+        //itWorked();
         EditText totalBalanceInput = findViewById(R.id.payCalc_input_debtSize);
         EditText resultInput = findViewById(R.id.payCalc_input_results);
         EditText numMonthsInput = findViewById(R.id.payCalc_input_numMonths);
