@@ -47,6 +47,12 @@
             android:label="BudgitInfo"
             android:theme="@style/Base.Theme.BackupBudgit">
         </activity>
+        <activity
+            android:name=".ChartView"
+            android:exported="false"
+            android:label="ChartView"
+            android:theme="@style/Base.Theme.BackupBudgit">
+        </activity>
 
 
 

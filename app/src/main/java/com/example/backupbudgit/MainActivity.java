@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString();
         int userId = authenticate(username, password);
 
-        if(true){ //DEBUG DELETE this
-        //if(userId != -1) {
+        //if(true){ //DEBUG DELETE this
+        if(username.equals("admin") && password.equals("admin")) {
             // Login success
             Intent intent = new Intent(MainActivity.this, ProfileLanding.class); // Replace ProfileActivity with your actual activity
             startActivity(intent);

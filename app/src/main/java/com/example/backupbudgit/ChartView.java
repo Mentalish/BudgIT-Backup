@@ -27,10 +27,10 @@ public class ChartView extends AppCompatActivity {
         PieChart pieChart = findViewById(R.id.chart);
 
         ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(80f, "Maths"));
-        entries.add(new PieEntry(90f, "English"));
-        entries.add(new PieEntry(65f, "Science"));
-        entries.add(new PieEntry(70f, "Programming"));
+        entries.add(new PieEntry(80f, "Income"));
+        entries.add(new PieEntry(90f, "Bills"));
+        entries.add(new PieEntry(65f, "Savings"));
+
         PieDataSet pieDataSet = new PieDataSet(entries, "Subjects");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData pieData = new PieData(pieDataSet);

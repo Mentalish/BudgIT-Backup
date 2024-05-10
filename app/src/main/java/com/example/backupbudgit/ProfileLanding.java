@@ -16,9 +16,7 @@ public class ProfileLanding extends ComponentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_main);
-        //setupDataButton();
         setupVisualizeButton();
-        //setupCalculatorButton();
         setupLogoutButton();
 
         //McLaughlin Monthly Payment Button Setup START
@@ -28,17 +26,6 @@ public class ProfileLanding extends ComponentActivity {
         setupBudgetInfoButton();
     }
 
-/*    private void setupDataButton(){
-        dataButton = findViewById(R.id.data_button);
-        dataButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                //whatever the data entry class is called needs to be identified here
-                Intent intent = new Intent(ProfileLanding.this, dataEntry.class);
-                startActivity(intent);
-            }
-        });
-    }
-*/
     private void setupVisualizeButton() {
         visualizeButton = findViewById(R.id.chart_view_button);
         visualizeButton.setOnClickListener(new View.OnClickListener(){
@@ -49,18 +36,6 @@ public class ProfileLanding extends ComponentActivity {
         });
     }
 
-    /*
-    private void setupCalculatorButton(){
-        calculatorButton = findViewById(R.id.calc_view_button);
-        calculatorButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                //whatever the calculator class will be called needs to be identified here
-                Intent intent = new Intent(ProfileLanding.this, calculator.class);
-                startActivity(intent);
-            }
-        });
-    }
-*/
     private void setupLogoutButton(){
         logoutButton = findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener(){
