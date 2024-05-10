@@ -23,6 +23,8 @@ public class BudgitInfoActivity extends AppCompatActivity {
 
         // Uncomment once graph layout is working
         //setupVisualize();
+
+        setupCalc();
     }
 
     private void setupProfileHome(){
@@ -47,4 +49,16 @@ public class BudgitInfoActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
+
+    private void setupCalc(){
+        calculatorButton = findViewById(R.id.to_calculator);
+        calculatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BudgitInfoActivity.this, MonthlyPaymentCalculator.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 }
