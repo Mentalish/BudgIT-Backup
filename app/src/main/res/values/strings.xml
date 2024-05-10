@@ -27,4 +27,12 @@
     <string name="todo">TODO</string>
     <string name="incomeinput">Income Here</string>
     <string name="bill_amount_input">Bill cost here</string>
+    <string name="calc_header">Payment Calculator</string>
+    <string name="calc_sizeOfPayment">Total Size of Payment</string>
+    <string name="calc_monthlyPaymentInstructions">Determine the number of months via\nmonthly payments</string>
+    <string name="calc_Calculate">Calculate</string>
+    <string name="calc_pickOne">Pick One</string>
+    <string name="calc_or">OR</string>
+    <string name="calc_numPaymentsInstructions">Determine your monthly payment size\nvia the number of months</string>
+    <string name="calc_payAssit">Monthly Payment Calculator</string>
 </resources>

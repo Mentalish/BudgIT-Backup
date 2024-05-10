@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString();
         int userId = authenticate(username, password);
 
-        if(userId != -1) {
+        if(true){ //DEBUG DELETE this
+        //if(userId != -1) {
             // Login success
             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, ProfileLanding.class); // Replace ProfileActivity with your actual activity
