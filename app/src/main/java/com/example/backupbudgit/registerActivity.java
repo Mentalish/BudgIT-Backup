@@ -7,18 +7,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.ComponentActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backupbudgit.datamanagement.IDManagement;
 import com.example.backupbudgit.datamanagement.WriteCache;
 
-public class registerActivity extends AppCompatActivity {
-    private EditText nameEditText, emailEditText, passwordEditText, confirmPasswordEditText, nameEditLastName;
+public class registerActivity extends ComponentActivity {
+    private EditText nameEditText, emailEditText, passwordEditText, confirmPasswordEditText, nameEditLastName, usernameEditText;
     private Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        WriteCache writeCache = new WriteCache();
+        WriteCache writeCache = new WriteCache( registerActivity.this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createprofile);
         setButtons(writeCache);
@@ -43,15 +44,16 @@ public class registerActivity extends AppCompatActivity {
         nameEditText = (EditText) findViewById(R.id.editFirstName);
         nameEditLastName = (EditText) findViewById(R.id.editLastName);
         passwordEditText = (EditText) findViewById(R.id.editTextPassword);
+        usernameEditText = (EditText) findViewById(R.id.editUsername);
         confirmPasswordEditText = (EditText) findViewById(R.id.editTextPassword2);
         submitButton = (Button) findViewById(R.id.buttonSubmit);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!nameEditText.getText().toString().isEmpty() || !nameEditLastName.getText().toString().isEmpty() || !passwordEditText.getText().toString().isEmpty() || !confirmPasswordEditText.getText().toString().isEmpty()){
+                if(!nameEditText.getText().toString().isEmpty() || !nameEditLastName.getText().toString().isEmpty() || !passwordEditText.getText().toString().isEmpty() || !confirmPasswordEditText.getText().toString().isEmpty() || !usernameEditText.getText().toString().isEmpty()){
                     if(passwordEditText.getText().toString().equals(confirmPasswordEditText.getText().toString())){
-                        writeCache.writeToCache(0, (IDManagement.generateID() + "," + nameEditText.getText().toString() + ","  + nameEditLastName.getText().toString() + ","  + passwordEditText.getText().toString()), "LOGIN");
+                        writeCache.writeToCache(0, (IDManagement.generateID() + "," + nameEditText.getText().toString() + ","  + nameEditLastName.getText().toString() + "," + usernameEditText.getText().toString()+ "," + passwordEditText.getText().toString()), "LOGIN");
 
                         Intent backToMain = new Intent(registerActivity.this, MainActivity.class);
                         startActivity(backToMain);

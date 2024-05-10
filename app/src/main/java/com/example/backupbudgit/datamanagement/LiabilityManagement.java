@@ -1,8 +1,13 @@
 package com.example.backupbudgit.datamanagement;
 
+import android.content.Context;
+
 import com.example.backupbudgit.liabilities.*;
 public class LiabilityManagement {
-    private LiabilityManagement(){}
+    private Context context;
+    public LiabilityManagement(Context context){
+        this.context = context;
+    }
 
     public static Liability createLiability(WriteCache writeCache, int userID, int id, double balance, double interestRate, String name){
         String line = "DEFAULT," + Integer.toString(userID) + "," + Double.toString(balance) + "," + Double.toString(interestRate) + "," + name;

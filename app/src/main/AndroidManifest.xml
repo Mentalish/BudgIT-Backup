@@ -38,9 +38,15 @@
         <activity
             android:name=".MonthlyPaymentCalculator"
             android:exported="false"
-            android:label="RegisterActivity"
+            android:label="MonthlyPaymentCalculator"
             android:theme="@style/Theme.BackupBudgit">
 
+        </activity>
+        <activity
+            android:name=".ChartView"
+            android:exported="false"
+            android:label="Chartview"
+            android:theme="@style/Theme.BackupBudgit">
         </activity>
 
 

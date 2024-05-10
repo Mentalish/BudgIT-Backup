@@ -1,5 +1,7 @@
 package com.example.backupbudgit.datamanagement;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.widget.Toast;
 
 import androidx.activity.ComponentActivity;
@@ -10,9 +12,10 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class ReadCache extends ComponentActivity {
-
-    public ReadCache(){}
+public class ReadCache extends ContextWrapper {
+    public ReadCache(Context base){
+        super(base);
+    }
     public String readFromCache(int userID, int itemID, String type) throws IOException{
         String entry;
         String[] lineEntries;

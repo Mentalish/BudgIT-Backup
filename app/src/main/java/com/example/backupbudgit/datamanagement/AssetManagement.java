@@ -1,8 +1,13 @@
 package com.example.backupbudgit.datamanagement;
 
+import android.content.Context;
+
 import com.example.backupbudgit.assets.*;
 public class AssetManagement{
-    private AssetManagement(){}
+    private Context context;
+    public AssetManagement(Context context){
+        this.context = context;
+    }
 
     public static Asset createAsset(WriteCache writeCache, int userID, int id, double value, double interest, String name){
         String line = "DEFAULT," + Integer.toString(userID) + "," + Double.toString(interest) + "," + name;

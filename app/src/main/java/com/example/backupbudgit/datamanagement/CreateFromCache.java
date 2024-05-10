@@ -1,5 +1,8 @@
 package com.example.backupbudgit.datamanagement;
 
+import android.content.Context;
+import android.content.ContextWrapper;
+
 import com.example.backupbudgit.assets.Asset;
 import com.example.backupbudgit.expenses.Expense;
 import com.example.backupbudgit.liabilities.Liability;
@@ -10,11 +13,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class CreateFromCache {
-    private CreateFromCache(){}
+public class CreateFromCache extends ContextWrapper {
+    Context context;
+    private CreateFromCache(Context base){
+        super(base);
+    }
 
     public userData initFromCache(int userID) throws IOException{
-        ReadCache readCache = new ReadCache();
+        ReadCache readCache = new ReadCache(this);
         userData userData = new userData();
         ArrayList<String> assets;
         ArrayList<String> liabilities;

@@ -2,6 +2,7 @@ package com.example.backupbudgit;
 
 import android.os.Bundle;
 
+import androidx.activity.ComponentActivity;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -16,7 +17,7 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
-public class ChartView extends AppCompatActivity {
+public class ChartView extends ComponentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

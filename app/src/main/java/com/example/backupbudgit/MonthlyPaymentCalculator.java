@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.*;
 import java.io.*;
 
-public class MonthlyPaymentCalculator extends AppCompatActivity {
+public class MonthlyPaymentCalculator extends ComponentActivity {
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

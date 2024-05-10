@@ -16,9 +16,9 @@ public class ProfileLanding extends ComponentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_main);
         //setupDataButton();
-        setupVisualizeButton();
+        //setupVisualizeButton();
         //setupCalculatorButton();
-        setupLogoutButton();
+        //setupLogoutButton();
 
         //McLaughlin Monthly Payment Button Setup START
         setupMonthCalcButton();

@@ -1,5 +1,7 @@
 package com.example.backupbudgit.datamanagement;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.widget.Toast;
 
 import androidx.activity.ComponentActivity;
@@ -13,8 +15,10 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
-public class WriteCache extends ComponentActivity{
-    public WriteCache(){}
+public class WriteCache extends ContextWrapper {
+    public WriteCache(Context base){
+        super(base);
+    }
 
     public void writeToCache(int userID, String line, String type){
         File userFile = new File(getFilesDir().getAbsolutePath(),  Integer.toString(userID) + type + ".txt");
@@ -30,16 +34,16 @@ public class WriteCache extends ComponentActivity{
                 writer.close();
             }
             catch (IOException e){
-                Toast.makeText(this, "ERROR storing data", Toast.LENGTH_SHORT).show();
+
             }
         }else{
             try {
-                OutputStreamWriter writer = new OutputStreamWriter(openFileOutput(Integer.toString(userID) + type+ ".txt", MODE_PRIVATE));
+                OutputStreamWriter writer = new OutputStreamWriter(openFileOutput(Integer.toString(userID) + type+ ".txt", Context.MODE_PRIVATE));
                 writer.write(line);
                 writer.close();
             }
             catch(IOException e){
-                Toast.makeText(this, "ERROR storing data", Toast.LENGTH_SHORT).show();
+
             }
         }
     }
@@ -82,7 +86,7 @@ public class WriteCache extends ComponentActivity{
                 userFileWriter.close();
             }
             catch(IOException e){
-                Toast.makeText(this, "ERROR deleting data", Toast.LENGTH_SHORT).show();
+
             }
         }
     }
@@ -127,7 +131,7 @@ public class WriteCache extends ComponentActivity{
                 userFileWriter.close();
             }
             catch(IOException e){
-                Toast.makeText(this, "ERROR deleting data", Toast.LENGTH_SHORT).show();
+
             }
         }
     }

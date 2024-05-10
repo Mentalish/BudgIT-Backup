@@ -51,14 +51,19 @@ public class MainActivity extends AppCompatActivity {
     private void loginUser() {
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
-        ReadCache readCache = new ReadCache();
+
+        if(username.isEmpty() || password.isEmpty()){
+            Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+        }
+
+        ReadCache readCache = new ReadCache( MainActivity.this);
         int userId = authenticate(username, password, readCache);
 
         if(userId != -1){
             // Login success
             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(MainActivity.this, ProfileLanding.class); // Replace ProfileActivity with your actual activity
-            startActivity(intent);
+            Intent login = new Intent(MainActivity.this, ProfileLanding.class); // Replace ProfileActivity with your actual activity
+            startActivity(login);
         } else {
             // Login failed
             Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
@@ -66,9 +71,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openRegisterLayout() {
-
-        Intent intent = new Intent(this, registerActivity.class);
-        startActivity(intent);
+        Intent register = new Intent(this, registerActivity.class);
+        startActivity(register);
     }
 
     // Authentication Method, no syntatic errors
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             for(int i = 0; i < users.size(); i++){
                 userLoginInfo = users.get(i).split(",");
 
-                if(Objects.equals(userLoginInfo[1], username) && Objects.equals(userLoginInfo[2], password)){
+                if(Objects.equals(userLoginInfo[2], username) && Objects.equals(userLoginInfo[3], password)){
                     id = Integer.parseInt(userLoginInfo[0]);
                     break;
                 }
