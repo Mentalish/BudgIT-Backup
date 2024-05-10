@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         if(true){ //DEBUG DELETE this
         //if(userId != -1) {
             // Login success
-            Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, ProfileLanding.class); // Replace ProfileActivity with your actual activity
             startActivity(intent);
         } else {
