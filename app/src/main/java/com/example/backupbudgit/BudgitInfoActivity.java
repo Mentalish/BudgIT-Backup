@@ -20,6 +20,9 @@ public class BudgitInfoActivity extends AppCompatActivity {
         setContentView((R.layout.data_entry));
 
         setupProfileHome();
+
+        // Uncomment once graph layout is working
+        //setupVisualize();
     }
 
     private void setupProfileHome(){
@@ -33,4 +36,15 @@ public class BudgitInfoActivity extends AppCompatActivity {
             }
         });
     }
+// Will work once graph layout is setup
+//    private void setupVisualize(){
+//        visualizeButton = findViewById(R.id.to_chart_page);
+//        visualizeButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(BudgitInfoActivity.this, ChartView.class);
+//                startActivity(intent);
+//            }
+//        });
+//    }
 }
