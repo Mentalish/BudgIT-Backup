@@ -11,6 +11,9 @@ import java.io.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.backupbudgit.datamanagement.ReadCache;
+import com.example.backupbudgit.datamanagement.WriteCache;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
     private void loginUser() {
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
-        int userId = authenticate(username, password);
+        ReadCache readCache = new ReadCache();
+        int userId = authenticate(username, password, readCache);
 
-        if(true){ //DEBUG DELETE this
-        //if(userId != -1) {
+        if(userId != -1){
             // Login success
             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, ProfileLanding.class); // Replace ProfileActivity with your actual activity
@@ -69,34 +72,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Authentication Method, no syntatic errors
-    private int authenticate(String username, String password){
+    private int authenticate(String username, String password, ReadCache readCache){
         Scanner scan;
         String str="";
         String[] userLoginInfo =  null;
-        boolean authenticated = false;
+        ArrayList<String> users;
         int id = -1;
-        File f = new File(getFilesDir().getAbsolutePath()+"/login.txt");
 
         try{
-            if(f.exists()) {
+            users = readCache.readAllFromCache(0, "LOGIN");
 
-                scan = new Scanner(openFileInput("login.txt"));
-                while (scan.hasNext()) {
-                    str = scan.nextLine();
-                    userLoginInfo = str.split(",");
-                    if (username.equalsIgnoreCase(userLoginInfo[1]) && password.equalsIgnoreCase(userLoginInfo[2])) {
-                        authenticated = true;
-                        id = Integer.parseInt(userLoginInfo[0]);
-                        break;
-                    }
+            for(int i = 0; i < users.size(); i++){
+                userLoginInfo = users.get(i).split(",");
+
+                if(Objects.equals(userLoginInfo[1], username) && Objects.equals(userLoginInfo[2], password)){
+                    id = Integer.parseInt(userLoginInfo[0]);
+                    break;
                 }
-                scan.close();
             }
-        } catch(IOException e){
-            //TODO append to a .log file
-            //TODO DELETE system.out.line below
-            System.out.println("Error: " + e.getMessage());
+
+        }catch(IOException e){
+            return -1;
         }
+
         return id;
     }
 

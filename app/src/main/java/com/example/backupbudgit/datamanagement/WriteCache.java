@@ -17,7 +17,7 @@ public class WriteCache extends ComponentActivity{
     public WriteCache(){}
 
     public void writeToCache(int userID, String line, String type){
-        File userFile = new File(getFilesDir().getAbsolutePath(), "/" + Integer.toString(userID) + type+ ".txt");
+        File userFile = new File(getFilesDir().getAbsolutePath(),  Integer.toString(userID) + type + ".txt");
         String currLine;
         String[] currLineTok;
         Random random = new Random();
@@ -35,7 +35,7 @@ public class WriteCache extends ComponentActivity{
         }else{
             try {
                 OutputStreamWriter writer = new OutputStreamWriter(openFileOutput(Integer.toString(userID) + type+ ".txt", MODE_PRIVATE));
-                writer.write("\n" + line);
+                writer.write(line);
                 writer.close();
             }
             catch(IOException e){
@@ -45,7 +45,7 @@ public class WriteCache extends ComponentActivity{
     }
 
     public void deleteFromCache(int userID, int itemID, String type){
-        File userFile = new File(getFilesDir().getAbsolutePath(), "/" + Integer.toString(userID) + type + ".txt");
+        File userFile = new File(getFilesDir().getAbsolutePath(), Integer.toString(userID) + type + ".txt");
         String fileContents = "";
         String[] entries;
         String[] currLineTok;
@@ -88,7 +88,7 @@ public class WriteCache extends ComponentActivity{
     }
 
     public void updateFromCache(int userID, int itemID, String type, String newline){
-        File userFile = new File(getFilesDir().getAbsolutePath(), "/" + Integer.toString(userID) + type + ".txt");
+        File userFile = new File(getFilesDir().getAbsolutePath(), Integer.toString(userID) + type + ".txt");
         String fileContents = "";
         String[] entries;
         String[] currLineTok;

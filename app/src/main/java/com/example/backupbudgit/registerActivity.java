@@ -1,5 +1,6 @@
 package com.example.backupbudgit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,27 +9,21 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.backupbudgit.datamanagement.IDManagement;
+import com.example.backupbudgit.datamanagement.WriteCache;
+
 public class registerActivity extends AppCompatActivity {
-    private EditText nameEditText, emailEditText, passwordEditText;
+    private EditText nameEditText, emailEditText, passwordEditText, confirmPasswordEditText, nameEditLastName;
     private Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        WriteCache writeCache = new WriteCache();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createprofile);
+        setButtons(writeCache);
 
-//        nameEditText = findViewById(R.id.editTextName);
-//        emailEditText = findViewById(R.id.editTextEmail);
-//        passwordEditText = findViewById(R.id.editTextPassword);
-//        submitButton = findViewById(R.id.buttonSubmit);
-//
-//        submitButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                registerUser();
-//            }
-//        });
-//    }
+
 //
 //    private void registerUser() {
 //        String name = nameEditText.getText().toString();
@@ -42,5 +37,31 @@ public class registerActivity extends AppCompatActivity {
 //        } else {
 //            Toast.makeText(registerActivity.this, "Please fill all fields", Toast.LENGTH_LONG).show();
 //        }
+    }
+
+    public void setButtons(WriteCache writeCache){
+        nameEditText = (EditText) findViewById(R.id.editFirstName);
+        nameEditLastName = (EditText) findViewById(R.id.editLastName);
+        passwordEditText = (EditText) findViewById(R.id.editTextPassword);
+        confirmPasswordEditText = (EditText) findViewById(R.id.editTextPassword2);
+        submitButton = (Button) findViewById(R.id.buttonSubmit);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!nameEditText.getText().toString().isEmpty() || !nameEditLastName.getText().toString().isEmpty() || !passwordEditText.getText().toString().isEmpty() || !confirmPasswordEditText.getText().toString().isEmpty()){
+                    if(passwordEditText.getText().toString().equals(confirmPasswordEditText.getText().toString())){
+                        writeCache.writeToCache(0, (IDManagement.generateID() + "," + nameEditText.getText().toString() + ","  + nameEditLastName.getText().toString() + ","  + passwordEditText.getText().toString()), "LOGIN");
+
+                        Intent backToMain = new Intent(registerActivity.this, MainActivity.class);
+                        startActivity(backToMain);
+                    }else{
+                        Toast.makeText(registerActivity.this, "Missing Information", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(registerActivity.this, "Passwords do not match", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }

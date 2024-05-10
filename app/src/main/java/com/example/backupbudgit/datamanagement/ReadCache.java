@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class ReadCache extends ComponentActivity {
 
     public ReadCache(){}
-    public String readFromCache(int userID, int itemID, String type){
+    public String readFromCache(int userID, int itemID, String type) throws IOException{
         String entry;
         String[] lineEntries;
         File userFile = new File(getFilesDir().getAbsolutePath(), "/" + Integer.toString(userID) + type + ".txt");
@@ -32,19 +32,20 @@ public class ReadCache extends ComponentActivity {
                 }
             }
             catch(IOException e){
-                Toast.makeText(this, "ERROR deleting data", Toast.LENGTH_SHORT).show();
-                return null;
+                throw new IOException("demo");
             }
+        }else{
+            throw new IOException("demo");
         }
 
         return null;
     }
 
-    public ArrayList<String> readAllFromCache(int userID, String type){
+    public ArrayList<String> readAllFromCache(int userID, String type) throws IOException{
         ArrayList<String> allEntries = new ArrayList<>();
         String entry;
         String[] entryArr;
-        File userFile = new File(getFilesDir().getAbsolutePath(), "/" + Integer.toString(userID) + type + ".txt");
+        File userFile = new File(getFilesDir().getAbsolutePath(), Integer.toString(userID) + type + ".txt");
 
         if(userFile.exists()){
             try{
@@ -60,9 +61,10 @@ public class ReadCache extends ComponentActivity {
                 }
             }
             catch(IOException e){
-                Toast.makeText(this, "ERROR deleting data", Toast.LENGTH_SHORT).show();
-                return null;
+                throw new IOException("demo");
             }
+        }else{
+            throw new IOException("demo");
         }
 
         return allEntries;
