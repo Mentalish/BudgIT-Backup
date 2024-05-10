@@ -38,10 +38,17 @@
         <activity
             android:name=".MonthlyPaymentCalculator"
             android:exported="false"
-            android:label="RegisterActivity"
+            android:label="MonthlyPaymentCalculator"
             android:theme="@style/Theme.BackupBudgit">
-
         </activity>
+        <activity
+            android:name=".BudgitInfoActivity"
+            android:exported="false"
+            android:label="BudgitInfo"
+            android:theme="@style/Base.Theme.BackupBudgit">
+        </activity>
+
+
 
 
     </application>
