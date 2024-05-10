@@ -5,9 +5,10 @@ import com.example.backupbudgit.expenses.Expense;
 import com.example.backupbudgit.liabilities.*;
 import com.example.backupbudgit.transactions.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class userData {
+public class userData implements Serializable{
     enum day {
         MONDAY,
         TUESDAY,
